@@ -1,0 +1,15 @@
+<h1>
+  (<%= @post.votes %>)
+  <a href="<%= post_url(@post) %>"><%= @post.title %></a> by
+  <%= @post.author.name %>
+</h1>
+
+<br>
+<b>Subs</b>
+<ul>
+  <% @post.subs.each do |sub| %>
+    <li><a href="<%= sub_url(sub) %>"><%= sub.name %></a></li>
+  <% end %>
+</ul>
+
+<a href="<%= edit_post_url(@post) if @post.author == current_user %>">Edit</a>
