@@ -1,0 +1,19 @@
+<h1>Login</h1>
+
+<form action="<%= session_url %>" method="post">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+<label>
+  Username
+  <input type="text" name="user[name]" value="<%= @user.name %>">
+</label>
+
+<label>
+  Password
+  <input type="password" name="user[password]" value="">
+</label>
+
+<input type="submit">
+</form>
+
+<a href="<%= new_user_url %>">Sign up!</a>
